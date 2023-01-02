@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: #292524;
-  color: #fafaf9;
+  background-color: #b4b4b4;
+  color: #000000;
   font-family: "Sono", sans-serif;
   padding: 40px;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 .fact-form {
-  background-color: #44403c;
+  background-color: #c7c7c7;
   margin-bottom: 40px;
   padding: 16px 40px;
   text-align: center;
@@ -41,7 +41,7 @@ h1 {
 .fact {
   font-size: 20px;
   line-height: 1.4;
-  background-color: #44403c;
+  background-color: #cecece;
   margin-bottom: 16px;
   padding: 16px 24px;
 }
