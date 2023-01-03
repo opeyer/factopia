@@ -16,85 +16,88 @@
     <title>Factopia</title>
   </head>
   <body>
-    <header class="header">
-      <div class="logo">
-        <img src="logo.png" height="68px" width="68px" alt="Factopia logo" />
-        <h1>Factopia</h1>
-      </div>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <img src="logo.png" height="68px" width="68px" alt="Factopia logo" />
+          <h1>Factopia</h1>
+        </div>
 
-      <button>Share a fact</button>
-    </header>
+        <button>Share a fact</button>
+      </header>
 
-    <form class="fact-form">
-      <input type="text" placeholder="Share a fact with the world..." />
-      <span>200</span>
-      <input type="text" placeholder="Trustworthy source..." />
-      <select>
-        <option value="">Choose category:</option>
-        <option value="technology">Technology</option>
-        <option value="science">Science</option>
-        <option value="finance">Finance</option>
-      </select>
-      <button>Post</button>
-    </form>
+      <form class="fact-form">
+        <input type="text" placeholder="Share a fact with the world..." />
+        <span>200</span>
+        <input type="text" placeholder="Trustworthy source..." />
+        <select>
+          <option value="">Choose category:</option>
+          <option value="technology">Technology</option>
+          <option value="science">Science</option>
+          <option value="finance">Finance</option>
+        </select>
+        <button>Post</button>
+      </form>
 
-    <main class="main">
-      <aside>
-        <ul>
-          <li><button>All</button></li>
-          <li><button>Technology</button></li>
-          <li><button>Science</button></li>
-        </ul>
-      </aside>
-      <section>
-        <ul>
-          <li class="fact">
-            <p>
-              The Commodore 64, at one point listed in the Guinness World
-              Records as the highest-selling single computer model of all time,
-              was originally sold for US$595 (equivalent to US$1,670 when
-              accounting for inflation).
-              <a
-                href="https://en.wikipedia.org/wiki/Commodore_64"
-                target="_blank"
-                >[SOURCE]</a
+      <main class="main">
+        <aside>
+          <ul>
+            <li><button>All</button></li>
+            <li><button>Technology</button></li>
+            <li><button>Science</button></li>
+          </ul>
+        </aside>
+        <section>
+          <ul>
+            <li class="fact">
+              <p>
+                The Commodore 64, at one point listed in the Guinness World
+                Records as the highest-selling single computer model of all
+                time, was originally sold for US$595 (equivalent to US$1,670
+                when accounting for inflation).
+                <a
+                  href="https://en.wikipedia.org/wiki/Commodore_64"
+                  target="_blank"
+                  >[SOURCE]</a
+                >
+              </p>
+              <span class="tag" style="background-color: #3b82f6"
+                >#technology</span
               >
-            </p>
-            <span class="tag" style="background-color: #3b82f6"
-              >#technology</span
-            >
-            <div class="vote-buttons">
-              <button>👍 <strong>24</strong></button>
-              <button>🤯 <strong>9</strong></button>
-              <button>⛔️ <strong>4</strong></button>
-            </div>
-          </li>
-        </ul>
+              <div class="vote-buttons">
+                <button>👍 <strong>24</strong></button>
+                <button>🤯 <strong>9</strong></button>
+                <button>⛔️ <strong>4</strong></button>
+              </div>
+            </li>
+          </ul>
 
-        <ul>
-          <li class="fact">
-            <p>
-              Sean Baker, director of <i>The Florida Project</i> and
-              <i>Tangerine</i> fame, was also one of the original creators of
-              the sitcom <i>Greg the Bunny</i> (2002-2006), it having been based
-              on a series of short segments that he'd written and directed for a
-              public access television show called <i>Junktape</i>.
-              <a
-                href="https://en.wikipedia.org/wiki/Sean_Baker_(filmmaker)#Career"
-                >[SOURCE]</a
+          <ul>
+            <li class="fact">
+              <p>
+                Sean Baker, director of <i>The Florida Project</i> and
+                <i>Tangerine</i> fame, was also one of the original creators of
+                the sitcom <i>Greg the Bunny</i> (2002-2006), it having been
+                based on a series of short segments that he'd written and
+                directed for a public access television show called
+                <i>Junktape</i>.
+                <a
+                  href="https://en.wikipedia.org/wiki/Sean_Baker_(filmmaker)#Career"
+                  >[SOURCE]</a
+                >
+              </p>
+              <span class="tag" style="background-color: #db2777"
+                >#entertainment</span
               >
-            </p>
-            <span class="tag" style="background-color: #db2777"
-              >#entertainment</span
-            >
-            <div class="vote-buttons">
-              <button>👍 <strong>11</strong></button>
-              <button>🤯 <strong>2</strong></button>
-              <button>⛔️ <strong>0</strong></button>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </main>
+              <div class="vote-buttons">
+                <button>👍 <strong>11</strong></button>
+                <button>🤯 <strong>2</strong></button>
+                <button>⛔️ <strong>0</strong></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
