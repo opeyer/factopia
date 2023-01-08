@@ -123,4 +123,9 @@ ul {
 
 .btn-category {
   width: 100%;
+  background-image: none;
+}
+
+.category {
+  margin-bottom: 5px;
 }
