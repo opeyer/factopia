@@ -2,6 +2,9 @@
 
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
+const factsList = document.querySelector(".facts-list");
+
+factsList.innerHTML = "";
 
 btn.addEventListener("click", function () {
   if (form.classList.contains("hidden")) {
@@ -30,14 +33,16 @@ const isCorrect = votesFalse < totalUpvotes;
 console.log(isCorrect);
 */
 
-// Calculate how old a post is
+// Calculate the age of a post
 
+/*
 function calcFactAge(year) {
   const currentYear = new Date().getFullYear();
   const age = currentYear - year;
 
   if (age >= 0) return age;
-  else return "ERROR: Impossible year! Are you a time traveler?";
+  else
+    return `ERROR: Impossible year! Are you a time traveler? Year needs to be less than or equal to ${currentYear}.`;
 
   return age;
 }
@@ -48,6 +53,15 @@ console.log(calcFactAge(2020));
 console.log(calcFactAge(1990));
 console.log(calcFactAge(2037));
 
+const calcFactAge2 = (year) =>
+  year <= new Date().getFullYear()
+    ? new Date().getFullYear() - year
+    : `ERROR: Impossible year. Are you a time traveler? Year needs to be less than or equal to ${new Date().getFullYear()}.`;
+
+console.log(calcFactAge2(2015));
+console.log(calcFactAge2(2037));
+
+/*
 let votesInteresting = 20;
 let votesMindblowing = 5;
 
@@ -77,3 +91,118 @@ const message =
 
 // alert(message);
 // 3 > 7 ? 'A' : 'B'
+
+const text = "Lisbon is the capital of Portugal";
+const upperText = text.toUpperCase();
+console.log(upperText);
+
+const str = `The current fact is "${text}". It is ${calcFactAge(
+  2015
+)} years old. It is probably ${
+  totalUpvotes > votesFalse ? "correct" : "not true"
+}.`;
+console.log(str);
+*/
+
+/*
+const fact = ["Lisbon is the capital of Portugal", 2015, true, "something"];
+console.log(fact[1]);
+console.log(fact.length);
+console.log(fact[fact.length - 1]);
+
+const [text, createdIn] = fact;
+const newFact = [...fact, "society"];
+console.log(newFact);
+
+const factObj = {
+  text: "Lisbon is the capital of Portugal",
+  category: "culture",
+  createdIn: 2015,
+  isCorrect: true,
+  createSummary: function () {
+    return `The fact ${
+      this.text
+    } is from the category ${this.category.toUpperCase()}.`;
+  },
+};
+
+console.log(factObj.text);
+console.log(factObj["text"]);
+
+const { category, isCorrect } = factObj;
+console.log(category);
+console.log(factObj.createSummary());
+
+// [2, 4, 6, 8].forEach(function (el) {
+//   console.log(el);
+// });
+
+// const times10 = [2, 4, 6, 8].map(function (el) {
+//   return el * 10;
+// });
+const times10 = [2, 4, 6, 8].map((el) => el * 10);
+console.log(times10);
+
+const CATEGORIES = [
+  { name: "technology", color: "#94b2e2" },
+  { name: "science", color: "#6ca080" },
+  { name: "finance", color: "#bbd8ba" },
+  { name: "culture", color: "#d2bed4" },
+  { name: "entertainment", color: "#d8aabf" },
+  { name: "health", color: "#d8aaaa" },
+  { name: "history", color: "#d8c6aa" },
+  { name: "news", color: "#9d94b6" },
+];
+
+const allCategories = CATEGORIES.map((el) => el.name);
+console.log(allCategories);
+
+const initialFacts = [
+  {
+    id: 1,
+    text: "React is being developed by Meta (formerly facebook)",
+    source: "https://opensource.fb.com/",
+    category: "technology",
+    votesInteresting: 24,
+    votesMindblowing: 9,
+    votesFalse: 4,
+    createdIn: 2021,
+  },
+  {
+    id: 2,
+    text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
+    source:
+      "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
+    category: "society",
+    votesInteresting: 11,
+    votesMindblowing: 2,
+    votesFalse: 0,
+    createdIn: 2019,
+  },
+  {
+    id: 3,
+    text: "Lisbon is the capital of Portugal",
+    source: "https://en.wikipedia.org/wiki/Lisbon",
+    category: "society",
+    votesInteresting: 8,
+    votesMindblowing: 3,
+    votesFalse: 1,
+    createdIn: 2015,
+  },
+];
+
+function calcFactAge(year) {
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - year;
+
+  if (age >= 0) return age;
+  else
+    return `ERROR: Impossible year! Are you a time traveler? Year needs to be less than or equal to ${currentYear}.`;
+
+  return age;
+}
+
+const factAges = initialFacts.map((el) => calcFactAge(el.createdIn));
+console.log(factAges);
+console.log(factAges.join(", "));
+*/
