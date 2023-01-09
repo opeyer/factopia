@@ -46,14 +46,35 @@ const CATEGORIES = [
   { name: "news", color: "#9d94b6" },
 ];
 
-// DOM element selection
+// Select DOM elements
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
 const factsList = document.querySelector(".facts-list");
 
-// DOM element creation: Render facts in list
+// Create DOM element: Render facts in list
 factsList.innerHTML = "";
-createFactsList(initialFacts);
+
+// Load data from Supabase
+loadFacts();
+
+async function loadFacts() {
+  const res = await fetch(
+    "https://vopojkeewzhwznidghxb.supabase.co/rest/v1/facts",
+    {
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvcG9qa2Vld3pod3puaWRnaHhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzMxNjkxODUsImV4cCI6MTk4ODc0NTE4NX0.JHtud-1MVWEebPNlCm4Iq5UPhAtlQu-LHvFISh5hZHw",
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvcG9qa2Vld3pod3puaWRnaHhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzMxNjkxODUsImV4cCI6MTk4ODc0NTE4NX0.JHtud-1MVWEebPNlCm4Iq5UPhAtlQu-LHvFISh5hZHw",
+      },
+    }
+  );
+  const data = await res.json();
+  //   console.log(data);
+  //   const filteredData = data.filter((fact) => fact.category === "culture");
+
+  createFactsList(data);
+}
 
 function createFactsList(dataArray) {
   const htmlArr = dataArray.map(
@@ -66,10 +87,11 @@ function createFactsList(dataArray) {
               target="_blank"
           >[SOURCE]</a>
         </p>
-          <span class="tag" style="background-color: #94b2e2">${fact.category}</span>
+          <span class="tag" style="background-color: ${
+            CATEGORIES.find((cat) => cat.name === fact.category).color
+          }">${fact.category}</span>
         </li>`
   );
-  console.log(htmlArr);
   const html = htmlArr.join("");
   factsList.insertAdjacentHTML("afterbegin", html);
 }
@@ -84,6 +106,9 @@ btn.addEventListener("click", function () {
     btn.textContent = "Share";
   }
 });
+
+console.log([7, 64, 6, -23, 11].filter((el) => el > 10));
+console.log([7, 64, 6, -23, 11].find((el) => el > 10));
 
 /*
 let votesInteresting = 23;
