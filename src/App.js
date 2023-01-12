@@ -93,7 +93,6 @@ function CategoryFilter() {
           </li>
         ))}
       </ul>
-      >
     </aside>
   );
 }
