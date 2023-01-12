@@ -1,17 +1,5 @@
 import "./style.css";
 
-const CATEGORIES = [
-  { name: "technology", color: "#94b2e2" },
-  { name: "science", color: "#6ca080" },
-  { name: "finance", color: "#bbd8ba" },
-  { name: "culture", color: "#d2bed4" },
-  { name: "society", color: "#d2bed4" },
-  { name: "entertainment", color: "#d8aabf" },
-  { name: "health", color: "#d8aaaa" },
-  { name: "history", color: "#d8c6aa" },
-  { name: "news", color: "#9d94b6" },
-];
-
 const initialFacts = [
   {
     id: 1,
@@ -28,7 +16,7 @@ const initialFacts = [
     text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
     source:
       "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
-    category: "society",
+    category: "culture",
     votesInteresting: 11,
     votesMindblowing: 2,
     votesFalse: 0,
@@ -38,7 +26,7 @@ const initialFacts = [
     id: 3,
     text: "Lisbon is the capital of Portugal",
     source: "https://en.wikipedia.org/wiki/Lisbon",
-    category: "society",
+    category: "culture",
     votesInteresting: 8,
     votesMindblowing: 3,
     votesFalse: 1,
@@ -75,8 +63,39 @@ function ShareForm() {
   return <form className="fact-form">Share a fact</form>;
 }
 
+const CATEGORIES = [
+  { name: "culture", color: "#d2bed4" },
+  { name: "entertainment", color: "#d8aabf" },
+  { name: "finance", color: "#bbd8ba" },
+  { name: "health", color: "#d8aaaa" },
+  { name: "history", color: "#d8c6aa" },
+  { name: "news", color: "#9d94b6" },
+  { name: "science", color: "#6ca080" },
+  { name: "technology", color: "#94b2e2" },
+];
+
 function CategoryFilter() {
-  return <aside>Category filter</aside>;
+  return (
+    <aside>
+      <ul>
+        <li className="category">
+          <button className="btn btn-all-categories">All</button>
+        </li>
+
+        {CATEGORIES.map((cat) => (
+          <li key={cat.name} className="category">
+            <button
+              className="btn btn-category"
+              style={{ backgroundColor: cat.color }}
+            >
+              {cat.name}
+            </button>
+          </li>
+        ))}
+      </ul>
+      >
+    </aside>
+  );
 }
 
 function FactList() {

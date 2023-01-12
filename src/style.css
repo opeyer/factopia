@@ -160,6 +160,7 @@ ul {
 .btn-category {
   width: 100%;
   background-image: none;
+  text-transform: capitalize;
 }
 
 .category {
