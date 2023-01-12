@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.css";
 
 const initialFacts = [
@@ -34,6 +35,19 @@ const initialFacts = [
   },
 ];
 
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <span style={{ fontSize: "40px" }}>{count}</span>
+      <button className="btn btn-large" onClick={() => setCount((c) => c + 1)}>
+        +1
+      </button>
+    </div>
+  );
+}
+
 function App() {
   const appTitle = "Factopia";
 
@@ -49,6 +63,7 @@ function App() {
         <button className="btn btn-large btn-open">Share</button>
       </header>
 
+      <Counter />
       <ShareForm />
 
       <main className="main">
@@ -109,8 +124,8 @@ function FactList() {
         ))}
       </ul>
       <p>
-        There are {facts.length} facts in this database! Wowzers! Why not add
-        your own?
+        Gee willikers, there are {facts.length} facts in this database! Why not
+        give us a +1 and add your own knowledge to the pile?
       </p>
     </section>
   );
