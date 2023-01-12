@@ -17,7 +17,7 @@ function App() {
 
       <ShareForm />
 
-      <main class="main">
+      <main className="main">
         <CategoryFilter />
         <FactList />
       </main>
