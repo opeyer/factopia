@@ -5,6 +5,7 @@ const CATEGORIES = [
   { name: "science", color: "#6ca080" },
   { name: "finance", color: "#bbd8ba" },
   { name: "culture", color: "#d2bed4" },
+  { name: "society", color: "#d2bed4" },
   { name: "entertainment", color: "#d8aabf" },
   { name: "health", color: "#d8aaaa" },
   { name: "history", color: "#d8c6aa" },
@@ -92,7 +93,14 @@ function FactList() {
                 [SOURCE]
               </a>
             </p>
-            <span className="tag" style={{ backgroundColor: "#94b2e2" }}>
+            <span
+              className="tag"
+              style={{
+                backgroundColor: CATEGORIES.find(
+                  (cat) => cat.name === fact.category
+                )?.color,
+              }}
+            >
               {fact.category}
             </span>
             <div className="vote-buttons">
