@@ -49,6 +49,8 @@ function Counter() {
 }
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
+
   const appTitle = "Factopia";
 
   return (
@@ -60,11 +62,15 @@ function App() {
           <h1>{appTitle}</h1>
         </div>
 
-        <button className="btn btn-large btn-open">Share</button>
+        <button
+          className="btn btn-large btn-open"
+          onClick={() => setShowForm((show) => !show)}
+        >
+          Share
+        </button>
       </header>
 
-      <Counter />
-      <ShareForm />
+      {showForm ? <ShareForm /> : null}
 
       <main className="main">
         <CategoryFilter />
