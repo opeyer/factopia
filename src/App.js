@@ -51,32 +51,35 @@ function Counter() {
 function App() {
   const [showForm, setShowForm] = useState(false);
 
-  const appTitle = "Factopia";
-
   return (
     <>
-      {/* HEADER */}
-      <header className="header">
-        <div className="logo">
-          <img src="logo.png" height="68px" width="68px" alt="Factopia logo" />
-          <h1>{appTitle}</h1>
-        </div>
-
-        <button
-          className="btn btn-large btn-open"
-          onClick={() => setShowForm((show) => !show)}
-        >
-          Share
-        </button>
-      </header>
-
+      <Header showForm={showForm} setShowForm={setShowForm} />
       {showForm ? <ShareForm /> : null}
-
       <main className="main">
         <CategoryFilter />
         <FactList />
       </main>
     </>
+  );
+}
+
+function Header({ showForm, setShowForm }) {
+  const appTitle = "Factopia";
+
+  return (
+    <header className="header">
+      <div className="logo">
+        <img src="logo.png" height="68px" width="68px" alt="Factopia logo" />
+        <h1>{appTitle}</h1>
+      </div>
+
+      <button
+        className="btn btn-large btn-open"
+        onClick={() => setShowForm((show) => !show)}
+      >
+        {showForm ? "Close" : "Share"}
+      </button>
+    </header>
   );
 }
 
