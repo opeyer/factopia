@@ -8,7 +8,7 @@ body {
   background-color: #bebebe;
   color: #000000;
   font-family: "Sono", sans-serif;
-  padding: 48px 64px;
+  padding: 48px 44px 0px;
 }
 
 .hidden {
@@ -23,6 +23,12 @@ body {
   text-transform: uppercase;
 }
 
+.disputed {
+  color: #ef4444;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
 /* Main layout */
 
 #root {
@@ -31,7 +37,7 @@ body {
 }
 
 .header {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,13 +46,19 @@ body {
 .main {
   display: grid;
   grid-template-columns: 150px 1fr;
-  gap: 48px;
+  gap: 10px;
+  height: calc(100vh - 48px - 68px - 40px);
 }
 
 @media (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;
   }
+}
+
+section {
+  overflow: scroll;
+  padding-bottom: 20px;
 }
 
 /* Elements */
@@ -176,7 +188,7 @@ ul {
 }
 
 .category {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 /* FORM */
@@ -216,9 +228,8 @@ ul {
 }
 
 @media (max-width: 1000px) {
-  body {
-    padding: 32px 48px;
-  }
+  /* body {
+    /* padding: 32px 48px; */
 
   .fact-form {
     flex-direction: column;
