@@ -273,8 +273,9 @@ function FactList({ facts, setFacts }) {
         ))}
       </ul>
       <p>
-        Gee willikers, there are {facts.length} facts in this database! Why not
-        give us a +1 and add your own knowledge to the pile?
+        Gee willikers, there are {facts.length} facts in this database!
+        <br />
+        Why not add one of your own?
       </p>
     </section>
   );
