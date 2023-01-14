@@ -273,9 +273,10 @@ function FactList({ facts, setFacts }) {
         ))}
       </ul>
       <p>
-        Gee willikers, there are {facts.length} facts in this database!
-        <br />
-        Why not add one of your own?
+        Gee willikers, there are {facts.length} facts in this database! Why not
+        add one of your own? Also: did you know that this website is open
+        source? Check out the code on{" "}
+        <a href="https://github.com/opeyer/factopia">GitHub</a>!
       </p>
     </section>
   );
